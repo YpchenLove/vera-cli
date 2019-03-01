@@ -8,7 +8,7 @@ const inquirer = require('inquirer');
 const ora = require('ora');
 const chalk = require('chalk');
 const symbols = require('log-symbols');
-const templateUrl = 'https://github.com/YpchenLove/koa2-gift.git';
+const templateUrl = 'direct:https://github.com/YpchenLove/koa2-gift.git#master';
 
 program.version('0.0.1-alpha.0', '-v, --version')
     .command('init <name>')
