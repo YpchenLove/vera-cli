@@ -1,6 +1,6 @@
 {
   "name": "vera-cli",
-  "version": "0.0.1-alpha.01",
+  "version": "0.0.1-alpha.02",
   "description": "Vue tool for developing webapp.",
   "main": "index.js",
   "scripts": {
