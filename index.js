@@ -9,7 +9,7 @@ const ora = require('ora');
 const chalk = require('chalk');
 const symbols = require('log-symbols');
 const version = require('./package.json').version;
-const templateUrl = 'direct:https://github.com/YpchenLove/koa2-gift.git#master';
+const templateUrl = require('./core/template');
 
 program.version(version, '-v, --version')
     .command('init <name>')
@@ -17,8 +17,8 @@ program.version(version, '-v, --version')
         if (!fs.existsSync(name)) {
             inquirer.prompt([
                 {
-                    name: 'description',
-                    message: 'description:'
+                    name: 'isInit',
+                    message: 'Generate project in current directory? (Y/n)'
                 },
                 {
                     name: 'author',
@@ -27,7 +27,7 @@ program.version(version, '-v, --version')
             ]).then((answers) => {
                 const spinner = ora('正在下载模板...');
                 spinner.start();
-                download(templateUrl, name, {
+                download(templateUrl.koaTemplate, name, {
                     clone: true
                 }, (err) => {
                     if (err) {
