@@ -8,9 +8,10 @@ const inquirer = require('inquirer');
 const ora = require('ora');
 const chalk = require('chalk');
 const symbols = require('log-symbols');
+const version = require('./package.json').version;
 const templateUrl = 'direct:https://github.com/YpchenLove/koa2-gift.git#master';
 
-program.version('0.0.1-alpha.0', '-v, --version')
+program.version(version, '-v, --version')
     .command('init <name>')
     .action((name) => {
         if (!fs.existsSync(name)) {
